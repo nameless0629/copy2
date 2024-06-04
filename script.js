@@ -1,19 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var selectElement = document.querySelector('#info-box select');
+    var languageSelect = document.querySelector('#info-box select');
     var usernameInput = document.querySelector('#username-input');
     var passwordInput = document.querySelector('#password-input');
+    var loginButton = document.querySelector('#login');
+    var cookieInfoElement = document.querySelector('#cookie-info');
 
-    selectElement.addEventListener('change', function() {
+    languageSelect.addEventListener('change', function() {
         if (this.value === '正體中文 (zh_tw)') {
             usernameInput.placeholder = '帳號';
             passwordInput.placeholder = '密碼';
+            loginButton.textContent = '登入';
+            cookieInfoElement.textContent = '\u2753 Cookie使用資訊';
         } else if (this.value === 'English (en)') {
             usernameInput.placeholder = 'Account';
             passwordInput.placeholder = 'Password';
+            loginButton.textContent = 'Log in';
+            cookieInfoElement.textContent = '\u2753 Cookie notice';
         }
     });
 });
-
 document.addEventListener('DOMContentLoaded', function() {
     var cookieInfoElement = document.querySelector('#cookie-info');
 
